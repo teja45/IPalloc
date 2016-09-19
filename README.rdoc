@@ -1,0 +1,53 @@
+== README
+
+Use only(Because i am tested in this combination.):
+Ruby version: 2.x
+Rails version: 4.2.6
+
+<tt>bundle install</tt>
+
+Before run rails app set the environment variable 'IPALLOC_DATAPATH'
+
+example:
+
+To setup envitonment variable enter below command:
+<tt> export set IPALLOC_DATAPATH=<file_path> </tt>
+
+After setting up the Environment variable run server:
+
+<tt>rails s</tt>
+
+GET /devices/1.2.3.4
+
+In Browser:
+
+<tt>http://localhost:3000/devices/1.2.3.4</tt>
+
+Returns:
+
+<tt>{"device":"device2","ip":"1.2.3.4"}</tt>
+
+If the address is not currently assigned, return a 404 HTTP code response with the following JSON
+
+Body:
+
+<tt>{"error":"NotFound","ip":"1.2.3.4"}</tt>
+
+
+To run the test cases:
+
+I am reading the track-ip-data in root directory for test.
+
+<tt>rspec spec/controllers/networks_controller_spec.rb</tt>
+
+
+If you want to test in another way then use Postman to test post ipaddress.
+
+
+All api's implemented in the networks_controller.rb
+
+Please look into this to understand.
+
+
+Thanks.
+
